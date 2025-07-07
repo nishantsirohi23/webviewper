@@ -12,11 +12,12 @@ const linksArr = [
     links: ['Our Company', 'Careers', 'Press kits'],
   },
   {
-    title: 'Legal',
-    links: ['Terms of use', 'Privacy policy', 'About us'],
+    title: 'Partner Onboarding',
+    links: ['Become a partner', 'Partner login'],
+   
   },
   {
-    title: 'About us',
+    title: 'Need help?',
     links: ['Contact us', 'FAQ'],
   },
 ];
@@ -80,7 +81,7 @@ const Footer = () => {
             </Translator>
             <CopyRight>
               <Image src={ic_copyright} alt="copyright svg" />
-              Raft Corp, LLC.
+              Perpenny Works LLP.
             </CopyRight>
           </FooterBottom>
         </FooterMainContent>

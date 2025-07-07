@@ -9,7 +9,6 @@ export { default as IntroSection } from './UI/IntroSection';
 export { default as JoinSection } from './UI/JoinSection';
 export { default as FAQ } from './UI/FAQ';
 export { default as Footer } from './UI/Footer';
-export { default as Preloader } from './UI/Preloader';
 export { default as MaskText } from './Common/MaskText';
 export { default as ReviewsSection } from './UI/IntroSection/ReviewsSection'; // Import the new ReviewsSection component
 export { default as ImageScrollReveal } from './UI/ImageScrollReveal';

@@ -3,7 +3,6 @@
 import { ReactLenis } from '@studio-freight/react-lenis';
 import StyledComponentsRegistry from '../../libs/registry';
 import { GlobalStyles } from './GlobalStyles';
-import { Footer, Header, Preloader } from '..';
 import { useState } from 'react';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
@@ -12,11 +11,11 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     <StyledComponentsRegistry>
      
         <GlobalStyles />
-        <Preloader setComplete={setComplete} />
+       
         <div className={complete ? 'complete' : 'not_complete'}>
-          <Header />
+          
           {children}
-          <Footer />
+          
         </div>
       
     </StyledComponentsRegistry>
