@@ -1,7 +1,7 @@
 'use client';
 
 
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState,useCallback, useMemo } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styled from 'styled-components';
@@ -241,7 +241,8 @@ const ImageScrollReveal: React.FC = () => {
 
   const phaseImagesBottomConfig: ImageConfig[] = [];
 
-  const smallImagesConfig: ImageConfig[] = [
+
+  const smallImagesConfig = useMemo<ImageConfig[]>(() => [
     {
       url: 'https://firebasestorage.googleapis.com/v0/b/perwork.appspot.com/o/000PerpennyWebsite%2Fphase3images%2FTutions%20Instagram%20Post%20in%20Light%20Pink%20Blue%20Bold%20Style%20.png?alt=media&token=27bc5075-782a-4a97-94c3-d22f8ae976b2',
       size: { 
@@ -374,7 +375,7 @@ const ImageScrollReveal: React.FC = () => {
       },
       delay: 0.49
     },
-  ];
+  ], []);
 
   // Effect for mobile detection
   useEffect(() => {
@@ -398,15 +399,16 @@ const ImageScrollReveal: React.FC = () => {
   }, []);
 
   // Calculate radius with proper typing
-  const calculateRadius = (radiusValue: string | number): number => {
+  const calculateRadius = useCallback((radiusValue: string | number): number => {
     return parseValue(
-      typeof radiusValue === 'string' ? 
-        radiusValue.replace(/clamp\(([^,]+),\s*([^,]+),\s*([^)]+)\)/, '$2') : 
-        radiusValue.toString(),
+      typeof radiusValue === 'string'
+        ? radiusValue.replace(/clamp\(([^,]+),\s*([^,]+),\s*([^)]+)\)/, '$2')
+        : radiusValue.toString(),
       windowSize.width,
       windowSize.height
     );
-  };
+  }, [windowSize]);
+  
 
   // Main animation effect
   useEffect(() => {
