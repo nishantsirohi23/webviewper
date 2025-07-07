@@ -575,7 +575,7 @@ const ImageScrollReveal: React.FC = () => {
     });
 
     return () => ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-  }, [windowSize]);
+  }, [windowSize, calculateRadius, smallImagesConfig]);
 
   return (
     <MainContainer ref={mainContainerRef}>
@@ -660,7 +660,7 @@ const ImageScrollReveal: React.FC = () => {
           <DescriptionTitle>Our Services</DescriptionTitle>
           <DescriptionText>
             Discover a wide range of services designed to meet all your needs in one place.
-            From professional consultations to hands-on solutions, we've got you covered.
+            From professional consultations to hands-on solutions, we have got you covered.
           </DescriptionText>
         </Description>
       </SplitScreen>
