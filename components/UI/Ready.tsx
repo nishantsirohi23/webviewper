@@ -8,7 +8,7 @@ import { useScroll, useTransform, motion } from "framer-motion";
 
 export default function Ready() {
 	const container = useRef(null);
-	const phrase = ["Ready", "to start", "the project"];
+	const phrase = ["Book", "trusted help", "instantly"];
 
 	const { scrollYProgress } = useScroll({
 		target: container,
@@ -32,7 +32,7 @@ export default function Ready() {
 					{/* Original White Button */}
 					<Link href="/contact">
 						<div className="px-6 py-3 rounded-full bg-[#070606] text-white text-[16px] sm:text-[14px] font-medium uppercase hover:opacity-90 transition-all duration-300 shadow-lg flex items-center gap-3">
-							<span>Start with Dark Mode</span>
+							<span>Download for Android</span>
 							<ArrowUpRight size={20} strokeWidth={1.5} />
 						</div>
 					</Link>
@@ -51,7 +51,7 @@ export default function Ready() {
 						>
 							<Rounded className="py-[6px]" backgroundColor="#212121">
 								<p className="z-10 px-[10px] ml-[15px] py-[6px] group-hover:text-white text-black">
-									hello@ochi.design
+									Download for iOS
 								</p>
 								<div className="bg-black group-hover:bg-white text-black p-[10px] rounded-full scale-[0.3] mr-[10px] group-hover:scale-[0.9] transition-all z-10 transform duration-[0.3s] ease-[.215,.61,.355,1]">
 									<ArrowUpRight

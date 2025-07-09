@@ -557,24 +557,37 @@ const ImageScrollReveal: React.FC = () => {
       }
     });
 
-    // PHASE 3: Final small images animation
-    smallImagesRef.current.forEach((img, index) => {
-      const config = smallImagesConfig[index];
-      if (!config || !img || !config.position) return;
-      
-      const angle = config.position.angle * (Math.PI / 180);
-      const radius = calculateRadius(config.position.radius);
-      const x = Math.cos(angle) * radius;
-      const y = Math.sin(angle) * radius;
-      
-      tl.to(img, {
-        opacity: 1,
-        scale: 0.8,
-        x: x,
-        y: y,
-        duration: 3,
-      }, 3.5 + (config.delay || 0));
-    });
+    if (isMobile) {
+      // ✅ MOBILE: Animate bigImageRef only
+      if (bigImageRef.current) {
+        tl.to(bigImageRef.current, {
+          scale: 1.15,
+          rotate: 12,
+          duration: 3,
+          ease: 'power2.inOut',
+        }, 3.5);
+      }
+    } else {
+      // ✅ DESKTOP: Animate smallImages in circular motion
+      smallImagesRef.current.forEach((img, index) => {
+        const config = smallImagesConfig[index];
+        if (!config || !img || !config.position) return;
+    
+        const angle = config.position.angle * (Math.PI / 180);
+        const radius = calculateRadius(config.position.radius);
+        const x = Math.cos(angle) * radius;
+        const y = Math.sin(angle) * radius;
+    
+        tl.to(img, {
+          opacity: 1,
+          scale: 0.8,
+          x: x,
+          y: y,
+          duration: 3,
+        }, 3.5 + (config.delay || 0));
+      });
+    }
+    
 
     return () => ScrollTrigger.getAll().forEach(trigger => trigger.kill());
   }, [windowSize, calculateRadius, smallImagesConfig]);

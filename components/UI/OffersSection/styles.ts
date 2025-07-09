@@ -52,9 +52,9 @@ export const ImageCtn = styled.div`
   margin: 3rem auto 0;
   position: relative;
   display: flex;
-  width: 100%; // ✅ Add this
+  width: 100%;
   height: 300px;
-  overflow: hidden; // Optional: to clip anything overflowing
+  overflow: hidden;
 
   &::after {
     position: absolute;
@@ -71,11 +71,9 @@ export const ImageCtn = styled.div`
 
   @media (max-width: 768px) {
     height: 200px;
-    width: 100%; // ✅ Keep consistent
+    margin-top: 1.5rem;
   }
 `;
-
-
 
 export const TextCtn = styled.div`
   padding: 2.5rem;
@@ -103,6 +101,9 @@ export const TextCtn = styled.div`
     padding: 1.5rem;
     h2 {
       font-size: 1.5rem;
+    }
+    p {
+      font-size: 0.95rem;
     }
   }
 `;
@@ -147,32 +148,28 @@ export const Offers = styled.div`
 
   @media (max-width: 768px) {
     flex-direction: column;
+    gap: 2rem;
 
     &:last-child {
-      div:first-child {
-        flex: 1;
+      margin-top: 2rem;
 
-        ${ImageCtn} {
-          margin-top: 4.78rem;
-          flex: 1;
-        }
-
-        ${TextCtn} {
-          margin-top: 4rem;
-        }
-      }
-
+      div:first-child,
       div:last-child {
-        flex: 1;
-
+        flex: unset;
+        width: 100%;
+        
         ${ImageCtn} {
-          margin-top: 5.7rem;
-          flex: 1;
-          margin-left: auto;
+          height: 200px;
+          margin-top: 1.5rem;
+          width: 100%;
+          margin-left: 0;
+          flex: none;
         }
 
         ${TextCtn} {
-          margin-top: 2rem;
+          margin-top: 1rem;
+          height: auto;
+          padding: 1.5rem;
         }
       }
     }
@@ -197,7 +194,24 @@ export const OfferCard = styled.div`
 
     ${ImageCtn} {
       margin-left: 2.5rem;
+      width: calc(100% - 2.5rem);
+    }
+  }
+
+  @media (max-width: 768px) {
+    height: auto;
+    min-height: 420px;
+
+    &:first-child,
+    &:nth-child(2) {
+      flex: unset;
+      width: 100%;
+    }
+
+    &:nth-child(2) ${ImageCtn} {
+      margin-left: 0;
       width: 100%;
     }
   }
 `;
+

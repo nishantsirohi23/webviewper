@@ -23,3 +23,5 @@ export { default as RoundButton } from "./UI/RoundButton";
 export { default as Rounded } from "./UI/Rounded";
 
 export { default as Ready } from "./UI/Ready";
+export { default as MobileMockupAnimation } from "./UI/MobileMockup";
+

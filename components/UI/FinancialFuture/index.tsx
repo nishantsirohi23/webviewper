@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import future_banner from '../../../public/images/bigfull.png';
-import future_mobile_banner from '../../../public/images/future_mobile_banner.png';
+import future_mobile_banner from '../../../public/images/mobilebigful.png';
 import {
   Wrapper,
   Inner,

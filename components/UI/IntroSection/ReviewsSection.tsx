@@ -178,7 +178,12 @@ const TickerContainer = styled.section`
   display: flex;
   flex-direction: column;
   padding-top: 7.5rem;
+
+  @media (max-width: 768px) {
+    height: 100vh;
+  }
 `;
+
 
 const HeaderContent = styled.div`
   text-align: center;

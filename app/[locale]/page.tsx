@@ -1,4 +1,5 @@
 'use client';
+
 import Lenis from '@studio-freight/lenis';
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -17,10 +18,13 @@ import {
   ReviewsSection,
   Whatwedo,
   Header,
+  MobileMockupAnimation
 } from '@/components';
+import { useIsMobile } from '../../libs/useIsMobile'; // adjust path if needed
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const isMobile = useIsMobile(); // using your existing hook
 
   useEffect(() => {
     const lenis = new Lenis();
@@ -33,7 +37,7 @@ export default function App() {
     const timeout = setTimeout(() => {
       setIsLoading(false);
       document.body.style.cursor = 'default';
-    }, 2000); // Match animation duration
+    }, 2000); // matches loader duration
 
     return () => clearTimeout(timeout);
   }, []);
@@ -45,7 +49,7 @@ export default function App() {
           <motion.div
             key="loader"
             className="fixed inset-0 z-[9999] flex items-center justify-center"
-            style={{ backgroundColor: '#000' }} // Inline avoids tailwind lag
+            style={{ backgroundColor: '#000' }}
             initial={{ opacity: 1 }}
             animate={{ opacity: 0 }}
             exit={{ opacity: 0 }}
@@ -67,17 +71,14 @@ export default function App() {
         <>
           <Header />
           <HeroSection />
-          <ImageScrollReveal />
+          {isMobile ? <MobileMockupAnimation /> : <ImageScrollReveal />}
           <Whatwedo />
-          
           <Featured />
           <OffersSection />
           <FinancilaFreedom />
           <FinancialFuture />
           <IntroSection />
-          <JoinSection />
           <ReviewsSection />
-          
           <FAQ />
           <Ready />
           <Footer />

@@ -5,7 +5,7 @@ const withNextIntl = createNextIntlPlugin();
 
 const nextConfig = {
   images: {
-    domains: ['firebasestorage.googleapis.com'], // ✅ allow Firebase image URLs
+    domains: ['firebasestorage.googleapis.com','api.dicebear.com'], // ✅ allow Firebase image URLs
   },
 };
 

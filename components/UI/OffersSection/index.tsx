@@ -36,7 +36,7 @@ const OffersSection = () => {
           {offers.slice(0, 2).map((offer, i) => (
             <OfferCard key={i}>
               <ImageCtn>
-                <Image src={offer.illustration} alt="illustration" fill
+                <Image src={offer.illustration} alt="illustration" fill 
   style={{
     objectFit: 'contain',
   }}/>

@@ -16,7 +16,7 @@ import { Div } from '../Featured/styles';
 import { imageVariants } from '../Featured';
 import { useIsMobile } from '../../../libs/useIsMobile';
 import financial_freedom_banner from '../../../public/images/designforfreedom.png';
-import freedom_mobile_banner from '../../../public/images/designforfreedom.png';
+import freedom_mobile_banner from '../../../public/images/mobilefreedom.png';
 import {
   desktopBriefNotePhrase,
   desktopHeaderPhrase,
