@@ -86,7 +86,7 @@ const Footer = () => {
           </FooterMiddle>
           <FooterBottom>
             <Translator>
-              <h3>English (United Kingdom)</h3>
+              <h3>English (Indian)</h3>
               <Image src={ic_chevron_down} alt="chevron down" />
             </Translator>
             <CopyRight>

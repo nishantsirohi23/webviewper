@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.perpenny.in
+
+# Sitemaps
+Sitemap: https://www.perpenny.in/sitemap.xml
